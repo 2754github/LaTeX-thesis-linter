@@ -1,22 +1,24 @@
 def file_linter(file_name)
   system("npx textlint #{file_name}")
-  warning_count = 0
   error_count = 0
+  warning_count = 0
   File.open(file_name, "r:UTF-8") do |file|
     file.each_with_index do |line, i|
       tmp = comma_and_period_rule(line, i)
-      warning_count += tmp[0]
-      error_count += tmp[1]
+      error_count += tmp[0]
+      warning_count += tmp[1]
       warning_count += formula_rule(line, i)
       error_count += posix_rule(line, i)
     end
   end
-  puts "\n\e[1m\e[31m✖ and #{error_count+warning_count} problems (#{error_count} errors, #{warning_count} warnings)\e[m\e[m"
+  if error_count+warning_count > 0
+    puts "\n\e[1m\e[31m✖ and #{error_count+warning_count} problems (#{error_count} errors, #{warning_count} warnings)\e[m\e[m"
+  end
 end
 
 def comma_and_period_rule(line, i)
-  warning_count = 0
   error_count = 0
+  warning_count = 0
 
   replace_words = {
     "　" => "␣",
@@ -67,7 +69,7 @@ def comma_and_period_rule(line, i)
     warning_count += 1
   end
 
-  return [warning_count, error_count]
+  return [error_count, warning_count]
 end
 
 def formula_rule(line, i)
