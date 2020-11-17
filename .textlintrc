@@ -1,0 +1,55 @@
+{
+  "plugins": ["latex2e"],
+  "rules": {
+    "@textlint-ja/no-synonyms": {
+      "allows": ["ヤコビ", "ノルム"],
+      "allowAlphabet": false,
+      "allowNumber": false
+    },
+    "@textlint-ja/textlint-rule-no-dropping-i": true,
+    "@textlint-ja/textlint-rule-no-insert-dropping-sa": true,
+    "@textlint-ja/textlint-rule-no-insert-re": true,
+    "ja-hiragana-fukushi": true,
+    "ja-hiragana-hojodoushi": true,
+    "ja-hiragana-keishikimeishi": true,
+    "ja-no-abusage": true,
+  	"ja-no-redundant-expression": true,
+    "ja-no-successive-word": true,
+  	"ja-no-weak-phrase": true,
+    "ja-unnatural-alphabet": true,
+  	"max-comma": {
+      "max" : 3
+    },
+    "max-kanji-continuous-len": {
+      "max": 5,
+      "allow": ["倍精度浮動小数点数"]
+    },
+    "no-double-negative-ja": true,
+    "no-doubled-conjunction": true,
+    "no-doubled-conjunctive-particle-ga": true,
+    "no-doubled-joshi": {
+      "min_interval" : 2,
+      "strict": false,
+      "allow": ["も","や"],
+      "separatorChars": ["。", "?", "!", "？", "！"],
+      "commaCharacters": ["、", ","]
+    },
+    "no-dropping-the-ra": true,
+    "no-hankaku-kana": true,
+    "no-mix-dearu-desumasu": {
+      "preferInHeader": "である",
+      "preferInBody": "である",
+      "preferInList": "である",
+      "strict": true
+    },
+    "no-mixed-zenkaku-and-hankaku-alphabet": {
+      "prefer": "半角"
+    },
+    "no-nfd": true,
+    "prefer-tari-tari": true,
+    "spellcheck-tech-word": true,
+    "prh": {
+      "rulePaths": ["./prh.yml"]
+    }
+  }
+}

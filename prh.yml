@@ -1,0 +1,46 @@
+version: 1
+rules:
+  - expected: Google
+    patterns: google
+  - expected: dots
+    patterns: cdots
+  # ひらがな => 漢字
+  - expected: 等
+    patterns: など
+  - expected: 持つ
+    patterns: もつ
+  # 漢字 => ひらがな
+  - expected: いう
+    patterns: 言う
+  - expected: なんらか
+    patterns: 何らか
+  - expected: よい
+    patterns: 良い
+  # 言い回し
+  - expected: いう
+    patterns: /(よ|呼)ぶ/
+  - expected: と定義
+    patterns: で定義
+  - expected: となる
+    patterns: になる
+  - expected: 場合
+    patterns: 際
+  - expected: 場合
+    patterns: とき
+  # 口語の使用を避ける
+  - expected: ため
+    patterns: ので
+  - expected: のみ
+    patterns: だけ
+  - expected: より
+    patterns: から
+  # なるべく漢語動詞を使う
+  - expected: 作成
+    patterns: /作(る|り)/
+  - expected: 定義
+    patterns: /定(める|め)/
+  - expected: 成立
+    patterns: 成り立
+  # タイトルに合わせる
+  - expected: 用い
+    patterns: 使用
