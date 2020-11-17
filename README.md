@@ -55,6 +55,13 @@ $ ruby file_linter.rb sample/bad_sentences.tex
 
 「`grep`をかける」「pdf を検索する」など、地道に確認しましょう・・・😭
 
+例えば
+
+- `{\\bf 初出の単語}`を心がける
+- 数式に合わせたかっこの大きさ
+
+などのルールです。
+
 # 参考
 
 - [textlint-ja](https://github.com/textlint-ja): 文章校正ツール（`LaTeX`非対応 😭）
