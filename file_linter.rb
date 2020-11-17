@@ -26,8 +26,8 @@ def comma_and_period_rule(line, i)
     "。" => ".␣",
     "，" => ",␣",
     "．" => ".␣",
-    "（" => "␣(",
-    "）" => ")␣"
+    "（" => "(",
+    "）" => ")"
     }
   replace_words.keys.each do |ng_word|
     line.where_is(ng_word).each do |j|
@@ -47,20 +47,6 @@ def comma_and_period_rule(line, i)
         puts message("error", "「#{word}」の後には半角スペースが必要です。", i, j)
         error_count += 1
       end
-    end
-  end
-
-  line.where_is(")").each do |j|
-    if line[j-1] == " "
-      puts message("error", "「)」の前に不要な半角スペースがあります。", i, j)
-      error_count += 1
-    end
-  end
-
-  line.where_is("(").each do |j|
-    if line[j+1] != " "
-      puts message("error", "「(」の前には半角スペースが必要です。", i, j)
-      error_count += 1
     end
   end
 
