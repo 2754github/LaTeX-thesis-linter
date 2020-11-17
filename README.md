@@ -29,6 +29,7 @@ $ ruby file_linter.rb sample/bad_sentences.tex
 # カスタマイズ
 
 - `.textlintrc`: `textlint`の各ルールを設定します
+  - 各ルールの概要は`LaTeX-thesis-linter/sample/bad_sentences.tex`に書いてあります
 - `prh.yml`: 表記の統一ルールを設定します
   - [`prh.yml`の書き方](https://github.com/prh/prh/blob/master/misc/prh.yml)
   - [このリスト](https://raw.githubusercontent.com/WorksApplications/SudachiDict/develop/src/main/text/synonyms.txt)にあるものは`@textlint-ja/no-synonyms`のルールに内包されているので`prh.yml`には書かなくて大丈夫です

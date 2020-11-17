@@ -1,36 +1,104 @@
-@textlint-ja/no-synonyms: サーバとサーバーの表記揺れがある. 
-@textlint-ja/textlint-rule-no-dropping-i: 開発してます. 
-@textlint-ja/textlint-rule-no-insert-dropping-sa: 刺し身を食べたさそう. これは良そうに見える. 
-@textlint-ja/textlint-rule-no-insert-re: お酒は飲めれない. 
-ja-hiragana-fukushi: 「生憎」より「あいにく」の方が読みやすい. 
-ja-hiragana-hojodoushi: 「して下さい」より「してください」の方が読みやすい. 
-ja-hiragana-keishikimeishi: 「する事」より「すること」の方が読みやすい. 
-ja-no-abusage: 例外を補足する. 
-ja-no-redundant-expression: この文章は冗長であると言えます. 
-ja-no-successive-word: これは問題あるある文章です. 
-ja-no-weak-phrase: この証明は正しいかもしれない. 
-ja-unnatural-alphabet: 今週末のリイr−スには対応でkない. 
-max-comma: この, 文章, は, カンマ, が, 多すぎ, る. 
-max-kanji-continuous-len: 日本応用数理学会. 
-no-double-negative-ja: この文章は問題なくもない. 
-no-doubled-conjunction: 早起きした. しかし, 定刻には間に合わなかった. しかし, 無事, 学会会場に到着した. 
-no-doubled-conjunctive-particle-ga: 早起きしたが, 定刻には間に合わなかったが, 無事, 学会会場に到着した. 
-no-doubled-joshi: 私は彼は好きだ. 
-no-dropping-the-ra: この距離からでも見れる. 
-no-hankaku-kana: この文章はﾀﾞﾒﾀﾞﾒです. 
-no-mix-dearu-desumasu: 吾輩は猫である. 名前はまだないです. 
-no-mixed-zenkaku-and-hankaku-alphabet: ＡＢＣのような全角アルファベットは許しません. 
-no-nfd: ど゛う゛し゛て゛！゛. 
-prefer-tari-tari: 気温が上がったり, 下がる. 
-spellcheck-tech-word: Googleの正しい表記はgoogleではなくGoogleです. 
+@textlint-ja/no-synonyms:
+「サーバ」と「サーバー」のような「表記揺れ」を指摘します. 
 
-my-rules
-句読点「、。」の使用は禁止です. 
-カンマや ,ピリオドの前にはスペースが不要ですが,後にはスペースが必要です.
-カンマで終わる文章は好ましくないです, 
-口語のため, 使用しません. 
-「よぶ」「呼ぶ」=>「いう」
-　←ここに全角スペースがあります
-$X$をバナッハ空間
-日本応用数理学会（JSIAM）
-日本応用数理学会(JSIAM)
+@textlint-ja/textlint-rule-no-dropping-i:
+「開発してます」のような「い抜き言葉」を指摘します. 
+
+@textlint-ja/textlint-rule-no-insert-dropping-sa:
+「刺し身を食べたさそう」のような「さ入れ言葉」を指摘します. 
+「これは良そうに見える」のような「さ抜き言葉」を指摘します. 
+
+@textlint-ja/textlint-rule-no-insert-re:
+「お酒は飲めれない」のような「れ足す言葉」を指摘します. 
+
+ja-hiragana-fukushi:
+「生憎 => あいにく」のような「ひらがな表記の方が読みやすい副詞」を指摘します. 
+ja-hiragana-hojodoushi:
+「して下さい => してください」のような「ひらがな表記の方が読みやすい補助動詞」を指摘します. 
+
+ja-hiragana-keishikimeishi:
+「する事 => すること」のような「ひらがな表記の方が読みやすい形式名詞」を指摘します. 
+
+ja-no-abusage:
+「とりつく暇もない」のような「よくある誤用」を指摘します. 
+
+ja-no-redundant-expression:
+「この文章は冗長であると言えます」のような「冗長表現」を指摘します. 
+
+ja-no-successive-word:
+「これは問題あるある文章です」のような「"間違った"同一単語の連続」を指摘します. 
+「すもももももももものうち」のような文章は指摘されません. 
+
+ja-no-weak-phrase:
+「この証明は正しいかもしれない」のような「弱い表現」を指摘します. 
+
+ja-unnatural-alphabet:
+「今週末のリイr−スには対応でkない」のような「不自然なアルファベット」を指摘します. 
+
+max-comma:
+「1文章中における, 指定した数を超えるカンマの出現」を指摘します. 
+「この, 文章, は, カンマ, が, 多すぎ, る. 」など. 
+
+max-kanji-continuous-len:
+「指定した数を超える漢字の連続」を指摘します. 
+「日本応用数理学会」など. 
+
+no-double-negative-ja:
+「この文章は問題なくもない」のような「二重否定」を指摘します. 
+
+no-doubled-conjunction:
+「早起きした. しかし, 定刻には間に合わなかった. しかし, 無事, 学会会場に到着した. 」
+のような「同一接続詞の連続」を指摘します. 
+
+no-doubled-conjunctive-particle-ga:
+「早起きしたが, 定刻には間に合わなかったが, 無事, 学会会場に到着した. 」
+のような「逆接の接続助詞"が"の連続」を指摘します. 
+
+no-doubled-joshi:
+「私は彼は好きだ」のような「同一助詞の連続」を指摘します. 
+
+no-dropping-the-ra:
+「この距離からでも見れる」のような「ら抜き言葉」を指摘します. 
+
+no-hankaku-kana:
+「この文章はﾀﾞﾒﾀﾞﾒです」のような「半角カタカナ」を指摘します. 
+
+no-mix-dearu-desumasu:
+「吾輩は猫である. 名前はまだないです. 」のような「常体と敬体の混在」を指摘します. 
+
+no-mixed-zenkaku-and-hankaku-alphabet:
+「ＡBＣ」のような「アルファベットの全角と半角の混在」を指摘します. 
+デフォルトで全角アルファベットの使用を禁止しています. 
+
+no-nfd:
+「ど゛う゛し゛て゛！゛」のような「問題となる濁点」を指摘します. 
+
+prefer-tari-tari:
+「気温が上がったり, 下がる. 」のような「〜たり〜たりする」を指摘します. 
+
+spellcheck-tech-word:
+「Java Script => JavaScript」のような「技術用語の誤表記」を指摘します. 
+
+prh.yml: 表記の統一ルールを設定してあるので見てみて欲しい. 
+
+my-rules:
+全角のスペース/読点/句点/カンマ/ピリオド/丸かっこを使用しない
+ = 半角のスペース/カンマ/ピリオド/丸かっこを使用する:
+エラーとなる例:: 　、。，．（）
+
+「,」「.」の前に「␣」を挿入しない:
+エラーとなる例:: , . 
+
+「,」「.」の後に「␣」を挿入する:
+エラーとなる例:: ,.
+
+「,␣(改行)」「,(改行)」で文が終了している場合に警告する:
+警告される例: , 
+,
+
+文頭が数式の場合に警告する
+警告される例:
+$X$をバナッハ空間とする
+
+ファイルの最後には改行を挿入する
+エラーとなる例:
