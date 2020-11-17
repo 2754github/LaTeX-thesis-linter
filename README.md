@@ -20,7 +20,7 @@ $ npm install
 
 ```zsh:ターミナル
 $ cd <LaTeX-thesis-linterフォルダへのpath>
-$ ruby file_linter.rb <校正したいファイルへのpath>
+$ ruby file_linter.rb <校正したいファイルへのpath> # 空のファイルを読み込ませるとエラーになります
 
 # サンプル
 $ ruby file_linter.rb sample/bad_sentences.tex
