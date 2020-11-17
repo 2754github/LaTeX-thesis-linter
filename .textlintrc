@@ -2,7 +2,7 @@
   "plugins": ["latex2e"],
   "rules": {
     "@textlint-ja/no-synonyms": {
-      "allows": ["ヤコビ", "ノルム"],
+      "allows": [],
       "allowAlphabet": false,
       "allowNumber": false
     },
@@ -22,7 +22,11 @@
     },
     "max-kanji-continuous-len": {
       "max": 5,
-      "allow": ["倍精度浮動小数点数"]
+      "allow": [
+        "非線形方程式",
+        "非線形作用素",
+        "非線形常微分方程式"
+      ]
     },
     "no-double-negative-ja": true,
     "no-doubled-conjunction": true,
