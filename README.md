@@ -65,6 +65,7 @@ $ ruby file_linter.rb sample/bad_sentences.tex
 
 - `{\\bf 初出の単語}`を心がける
 - 数式に合わせたかっこの大きさ
+- 数式内の「max」「cos」などが斜体になっていないかどうか
 
 などのルールです。
 
