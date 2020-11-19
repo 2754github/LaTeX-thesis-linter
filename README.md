@@ -20,7 +20,7 @@ $ npm install
 
 ```zsh:ターミナル
 $ cd <LaTeX-thesis-linterフォルダへのpath>
-$ ruby file_linter.rb <校正したいファイルへのpath> # 空のファイルを読み込ませるとエラーになります
+$ ruby file_linter.rb <校正したいファイルへのpath>
 $ ruby dir_linter.rb <校正したいファイル群が置かれているディレクトリへのpath>
 
 # サンプル
@@ -48,7 +48,7 @@ $ ruby file_linter.rb sample/bad_sentences.tex
 - 「,」「.」の後に「␣」を挿入する
 - 「,␣(改行)」「,(改行)」で文が終了している場合に警告する
 - 文頭が数式の場合に警告する
-- 「`\int`」コマンド使用時、被積分関数の後に「`\,`」を挿入する
+- `\int`コマンド使用時、被積分関数の後に`\,`を挿入する
 - ファイルの最後には改行を挿入する
 
 </details>

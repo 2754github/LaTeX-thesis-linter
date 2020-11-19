@@ -90,8 +90,10 @@ def message(severity, sentence, i, j)
   prefix = severity == "error" ? "31" : "33"
   severity = severity.rjust(5, " ")
   line_number = "#{i+1}".rjust(4, " ")
-  character_number = "#{j+1}".ljust(4, " ")
-  return "\e[90m#{line_number}:#{character_number}\e[m \e[#{prefix}m#{severity}\e[m  #{sentence}"
+  character_number = "#{j+1}".ljust(3, " ")
+  return \
+    "\e[90m#{line_number}:#{character_number}\e[m " +
+    "\e[#{prefix}m#{severity}\e[m #{sentence}"
 end
 
 class String
