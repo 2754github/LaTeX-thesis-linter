@@ -9,6 +9,7 @@ def file_linter(file_name)
       error_count += tmp[0]
       warning_count += tmp[1]
       warning_count += formula_rule(line, i)
+      error_count += integral_rule(line, i)
       error_count += posix_rule(line, i)
     end
   end
@@ -51,7 +52,7 @@ def comma_and_period_rule(line, i)
         puts message("error", "「#{word}」の前に不要な半角スペースがあります。", i, j)
         error_count += 1
       end
-      if line[j-1] != "\\\\" && line[j+1] != " "
+      if line[j-1] != "\\" && line[j+1] != " "
         puts message("error", "「#{word}」の後には半角スペースが必要です。", i, j)
         error_count += 1
       end
@@ -69,6 +70,13 @@ end
 def formula_rule(line, i)
   return 0 if line[0] != "$"
   puts message("warn", "文頭が数式です。", i, 0)
+  return 1
+end
+
+def integral_rule(line, i)
+  return 0 unless line.include? "\\int"
+  return 0 if line.include? "\\,"
+  puts message("error", "被積分関数の後には「\\,」が必要です。", i, line.index("\\int"))
   return 1
 end
 
