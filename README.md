@@ -50,6 +50,7 @@ $ ruby file_linter.rb sample/bad_sentences.tex
 - 文頭が数式の場合に警告する
 - `\int`コマンド使用時、被積分関数の後に`\,`を挿入する
 - 「式`\eqref`」と記述する
+- 「~`\cite`」と記述する
 - ファイルの最後には改行を挿入する
 
 </details>

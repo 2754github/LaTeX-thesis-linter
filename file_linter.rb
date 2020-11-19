@@ -11,6 +11,7 @@ def file_linter(file_name)
       warning_count += formula_rule(line, i)
       error_count += integral_rule(line, i)
       error_count += eqref_rule(line, i)
+      error_count += cite_rule(line, i)
       error_count += posix_rule(line, i)
     end
   end
@@ -85,6 +86,13 @@ def eqref_rule(line, i)
   return 0 unless line.include? "\\eqref"
   return 0 if line[line.index("\\eqref")-1] == "式"
   puts message("error", "「式\\eqref」と記述してください。", i, line.index("\\eqref"))
+  return 1
+end
+
+def cite_rule(line, i)
+  return 0 unless line.include? "\\cite"
+  return 0 if line[line.index("\\cite")-1] == "~"
+  puts message("error", "「~\\cite」と記述してください。", i, line.index("\\cite"))
   return 1
 end
 
