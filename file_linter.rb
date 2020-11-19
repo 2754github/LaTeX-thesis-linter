@@ -1,5 +1,6 @@
 def file_linter(file_name)
   system("npx textlint #{file_name}")
+
   error_count = 0
   warning_count = 0
   File.open(file_name, "r:UTF-8") do |file|
@@ -11,8 +12,15 @@ def file_linter(file_name)
       error_count += posix_rule(line, i)
     end
   end
-  if error_count+warning_count > 0
-    puts "\n\e[1m\e[31m✖ and #{error_count+warning_count} problems (#{error_count} errors, #{warning_count} warnings)\e[m\e[m"
+
+  total_count = error_count + warning_count
+  if total_count > 0
+    puts "\n" +
+    "\e[1m\e[31m" +
+    "✖ and #{total_count} problem#{total_count == 1 ? "" : "s"} " +
+    "(#{error_count} error#{error_count == 1 ? "" : "s"}, " +
+    "#{warning_count} warning#{warning_count == 1 ? "" : "s"})" +
+    "\e[m\e[m"
   end
 end
 
@@ -71,10 +79,11 @@ def posix_rule(line, i)
 end
 
 def message(severity, sentence, i, j)
-  color_prefix = severity == "error" ? "31" : "33"
-  line_number = "#{i+1}".rjust(3, " ")
-  character_number = "#{j+1}".rjust(3, " ")
-  return "#{line_number}:#{character_number}:\e[#{color_prefix}m#{sentence}\e[m"
+  prefix = severity == "error" ? "31" : "33"
+  severity = severity.rjust(5, " ")
+  line_number = "#{i+1}".rjust(4, " ")
+  character_number = "#{j+1}".ljust(4, " ")
+  return "\e[90m#{line_number}:#{character_number}\e[m \e[#{prefix}m#{severity}\e[m  #{sentence}"
 end
 
 class String
