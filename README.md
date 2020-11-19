@@ -21,6 +21,7 @@ $ npm install
 ```zsh:ターミナル
 $ cd <LaTeX-thesis-linterフォルダへのpath>
 $ ruby file_linter.rb <校正したいファイルへのpath> # 空のファイルを読み込ませるとエラーになります
+$ ruby dir_linter.rb <校正したいファイル群が置かれているディレクトリへのpath>
 
 # サンプル
 $ ruby file_linter.rb sample/bad_sentences.tex
@@ -36,6 +37,7 @@ $ ruby file_linter.rb sample/bad_sentences.tex
 - `file_linter.rb`:
   - このファイルから`textlint`を呼び出してファイルを走査します
   - さらに`textlint`で対応できない追加のルール（カンマ/ピリオドに関するルール等）を付与してファイルを走査します
+- `dir_linter.rb`: ディレクトリ下を再帰的に読み込み、ファイルを走査します
 
 <details>
 <summary>「`textlint`で対応できない追加のルール」はこちら</summary>
