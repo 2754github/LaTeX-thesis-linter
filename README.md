@@ -1,6 +1,6 @@
 # 概要
 
-`LaTeX-thesis-linter`は「`LaTeX`で執筆された日本語論文の校正を補助するツール」です。
+`LaTeX-thesis-linter`は「`LaTeX`で執筆された日本語論文の校正を補助するツール」です。おかしな部分を**指摘をするのみ**で、ファイルの中身を書き換えることはありません。
 
 （あくまでも、校正を補助するためのものであり、論文自体の正確性や文章の完全性を保証するものではありません。）
 
@@ -36,10 +36,11 @@ $ ruby file_linter.rb sample/bad_sentences.tex
 - `prh.yml`: 表記の統一ルールを設定します
   - [`prh.yml`の書き方](https://github.com/prh/prh/blob/master/misc/prh.yml)
   - [このリスト](https://raw.githubusercontent.com/WorksApplications/SudachiDict/develop/src/main/text/synonyms.txt)にあるものは`@textlint-ja/no-synonyms`のルールに内包されているので`prh.yml`には書かなくて大丈夫です
-- `file_linter.rb`:
-  - このファイルから`textlint`を呼び出してファイルを走査します
-  - さらに`textlint`で対応できない追加のルール（カンマ/ピリオドに関するルール等）を付与してファイルを走査します
+- `file_linter.rb`: ファイルを走査します
+  - 内部で`textlint`を呼び出しています
+  - さらに「`textlint`で対応できない追加のルール」についてもチェックします
 - `dir_linter.rb`: ディレクトリ下を再帰的に読み込み、ファイルを走査します
+  - 内部で再帰的に`file_linter.rb`を呼び出しています
 
 <details>
 <summary>「`textlint`で対応できない追加のルール」はこちら</summary>
